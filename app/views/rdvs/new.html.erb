@@ -1,0 +1,16 @@
+  <h2>Prise de rendez-vous</h2>
+<%= simple_form_for [@rdv] do |f| %>
+  <div class="row">
+  <div class="col">
+    <%= f.input :date, as: :string,
+                wrapper_html: { class: "mb-4" },
+                label_html: { class: "form-label text-secondary fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
+  </div>
+
+</div>
+  <%= f.association :doctor, prompt: "Select a specialist", input_html: {data: { controller: "tom-select"}} %>
+
+  <br>
+  <%= f.submit class: "animated-link" %>
+<% end %>

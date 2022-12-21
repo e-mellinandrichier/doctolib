@@ -1,5 +1,6 @@
 class RdvsController < ApplicationController
   before_action :set_rdv, only: [:show, :edit, :update, :destroy]
+  # before_action :set_doctor, only: [:new, :create]
 
   def index
     @rdvs = Rdv.all
@@ -15,8 +16,9 @@ class RdvsController < ApplicationController
 
   def create
     @rdv = Rdv.new(rdv_params)
+    @rdv.user = current_user
     @rdv.save
-    redirect_to rdv_path(@rdv)
+    redirect_to rdvs_path
   end
 
   def edit
@@ -44,4 +46,8 @@ class RdvsController < ApplicationController
   def set_rdv
     @rdv = Rdv.find(params[:id])
   end
+
+  # def set_doctor
+  #   @doctor = Doctor.find(params[:id])
+  # end
 end
