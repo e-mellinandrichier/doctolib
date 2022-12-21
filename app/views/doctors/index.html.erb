@@ -1,0 +1,7 @@
+<h1>Find what u're looking for and get better soon</h1>
+<ul>
+  <% @doctors.each do |doctor| %>
+    <li><%= link_to doctor.name, doctor_path(doctor) %></li>
+    <p><%= doctor.specialty %></p>
+  <% end %>
+</ul>

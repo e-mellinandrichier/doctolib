@@ -1,0 +1,9 @@
+<%= simple_form_for [@doctor, @rdv] do |f| %>
+  <h2>Prise de rendez-vous</h2>
+  <br>
+  <%= f.input :date, as: :date %>
+  <%= f.association :doctor %>
+
+  <br>
+  <%= f.submit class: "animated-link" %>
+<% end %>
