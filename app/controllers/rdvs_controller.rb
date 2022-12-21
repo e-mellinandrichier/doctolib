@@ -1,0 +1,2 @@
+class RdvsController < ApplicationController
+end
